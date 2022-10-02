@@ -13,9 +13,11 @@ Once the program has been compiled you can use ``./main`` to run the program. As
 
 To keep it simple, I decided that a module should have three attributes:
 
->Module name
->Module credits
->Module hours completed
+```
+Module name
+Module credits
+Module hours completed
+```
 
 The module hours to complete are 100 hours per 10 credits as per the system my university suggets (this may be different for other universities and I could implement a config file structure later)
 
