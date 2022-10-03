@@ -13,7 +13,7 @@ int hasFile(char* filename){
     return -1;
 }
 
-int validFile(char* filename){
+int validFile(char* filename){ //Writing EOF as a module name will work (can be fixed later)
 
     FILE *fptr;
     fptr = fopen(filename,"r");
@@ -28,9 +28,15 @@ int validFile(char* filename){
     while(fgets(str,sizeof(str),fptr)){
 
         lineCount++;
-        if(strcmp("EOF",str) == 0 && lineCount >= 3){
+         if(strcmp("EOF",str) == 0 && lineCount >= 3){
             eof = 1;
         }
+
+    }
+
+    if(strcmp("EOF",str) == 0 && lineCount >= 3){ // to process the last piece of data
+
+        eof = 1;
     }
 
     fclose(fptr);
@@ -106,16 +112,46 @@ int getLines(char* file){
     FILE *fptr;
     fptr = fopen(file,"r");
     int lines = 0;
-
+    char ch;
     if(hasFile(file) == -1){return -1;}
 
-    while(fgets(NULL,0,fptr)){
-        lines++;
+    while(!feof(fptr))
+    {
+        ch = fgetc(fptr);
+        if(ch == '\n'){
+            lines++;
+        }
     }
-
-
+    
     fclose(fptr);
     return lines;
 }
 
+
+int checks(){
+
+    char* fn = "data";
+
+    if(hasFile(fn) == -1){
+        
+        printf("No file has been found. If this is wrong, please put a file named 'data' in the same directory as the binary and reload the program\n\nIf this is not wrong, press Enter to go through the file setup process");
+        getchar();    
+        system("clear");
+        
+        if(makeFile() == -1){
+        
+            printf("The file you just made isnt valid for this program to process. It is possible that the program failed to write some necessary data. Delete the file named 'data' and rerun the program to try again\n");
+            return -1;
+        }
+    }
+
+    else if(validFile(fn) == -1){
+        printf("The file named 'data' is invalid. Try adding EOF to the end of the file to fix this problem.\nNOTE: if this isn't the problem, it will either do nothing or add undefined behaviour to the program and you could lose all saved data\n");    
+        return -1;
+    }
+    
+    return 1;
+
+    
+}
 

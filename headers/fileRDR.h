@@ -11,4 +11,6 @@ int makeFile(); // starts sequence for generating the file to read and write to 
 
 int getLines(char*);
 
+int checks();
+
 #endif
