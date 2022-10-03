@@ -3,7 +3,7 @@ This is a program that helps track allocated time for modules in a semester for 
 
 # How to build
 
-You can use the python build.py file to automatically compile the program and run it on your system. Alternitavely you can use the already compiled file (its compiled on debian linux) or you can compile it by hand with `` gcc main.c fileRDR.c dataSTRUC.c -Wall -pedantic-errors -o main``
+You can use the ``python build.py`` file to automatically compile the program and run it on your system. Alternitavely you can use the already compiled file (its compiled on debian linux) or you can compile it by hand with `` gcc main.c fileRDR.c dataSTRUC.c -Wall -pedantic-errors -o main``
 
 # How to run
 
