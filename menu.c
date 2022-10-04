@@ -1,7 +1,7 @@
 #include "headers/menu.h"
 #include "headers/dataSTRUC.h"
 #include "headers/fileRDR.h"
-
+#include <stdlib.h>
 
 #define MAX 7
 
@@ -27,9 +27,13 @@ void ex(){
 }
 
 
-void runMenOpt(int choice){
+void runMenOpt(int choice){ // 
 
-    void (*func_ptr[MAX])() = {printModules,editModule,addModule,deleteModule,makeFile,deleteFile,ex};
+    void* (*func_ptr[MAX])() = {printModules,editModule,addModule,deleteModule,NULL,deleteFile,ex};
+    if(choice == 4){
+        makeFile();
+    }
+    func_ptr[choice]();
 
 }
 

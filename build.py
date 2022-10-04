@@ -1,4 +1,4 @@
-import os
+import os 
 import sys
 
 source = [x for x in os.listdir(".") if ".c" in x]
@@ -7,7 +7,7 @@ buildStr = ""
 for elem in source:
     buildStr += elem + " "
 
-f = "gcc {} -Wall -pedantic-errors -g -o main && ./main".format(buildStr)
+f = "gcc {} -Wall -pedantic -g -o main && ./main".format(buildStr)
 os.system(f)
 
 if len(sys.argv) > 1:

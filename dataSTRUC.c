@@ -78,8 +78,10 @@ struct Module* constructModules(){
 }
 
 
-void printModules(struct Module* arr){
+void printModules(){
     
+    struct Module* arr = constructModules();
+
     int x = 0;
 
     for(int i = 0; i < arr[0].length;i++){
@@ -95,7 +97,7 @@ void printModules(struct Module* arr){
         printf("\n\nCredits: %d\nCurrent Hours: %d\n\n",arr[i].credits,arr[i].hours);
 
     }
-
+    free(arr);
 }
 
 

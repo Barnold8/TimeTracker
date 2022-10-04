@@ -13,6 +13,6 @@ int getLines(char*);
 
 int checks();
 
-void deleteFile(char*);
+void deleteFile();
 
 #endif

@@ -12,8 +12,8 @@ int main(){
     if(checks() == -1){return -1;} 
 
     struct Module* mods = constructModules();
-    
-    printf("\n\n\nYou chose: %d\n",homeChoice());
+     
+    runMenOpt(homeChoice());
 
     free(mods);
 
