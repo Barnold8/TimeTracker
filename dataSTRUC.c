@@ -97,3 +97,23 @@ void printModules(struct Module* arr){
     }
 
 }
+
+
+void editModule(){
+        
+    printf("EditModule\n");
+
+}
+
+void deleteModule(){
+
+    printf("DeleteModule\n");
+
+}
+
+void addModule(){
+
+    printf("addModule\n");
+
+}
+

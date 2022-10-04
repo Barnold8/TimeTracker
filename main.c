@@ -4,15 +4,18 @@
 #include <stdlib.h>
 #include "headers/fileRDR.h"
 #include "headers/dataSTRUC.h"
+#include "headers/menu.h"
+
 
 int main(){
 
     if(checks() == -1){return -1;} 
 
     struct Module* mods = constructModules();
-
-    printModules(mods);
+    
+    printf("\n\n\nYou chose: %d\n",homeChoice());
 
     free(mods);
+
     return 0;
 }

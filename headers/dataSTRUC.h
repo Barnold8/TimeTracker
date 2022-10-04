@@ -6,14 +6,18 @@ struct Module{ // each module has hours completed by user, credits to determine 
     char name[255];
     int hours;
     int credits;
-    int length;   
+    int length;
+    int id; // used to determine what menu item each module is for the menu system
 };
 
 struct Module* constructModules(); // returns heap allocated struct array with all the modules read from file / FREE THIS LATER
 
 void printModules(struct Module*);
 
-void printRevStr(char*);
+void editModule();
 
+void deleteModule();
+
+void addModule();
 
 #endif

@@ -155,3 +155,9 @@ int checks(){
     
 }
 
+void deleteFile(char* file){
+
+    system(strcat("rm ",file));
+
+}
+
