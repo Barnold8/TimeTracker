@@ -49,15 +49,18 @@ struct Module* constructModules(){
         switch(count){ // no checks for atoi since we checked in the writing of the file
             
             case 0:
-                arr[index].name = str;
+                
+                for(int i = 0; i < 255; i++){
+                    arr[index].name[i] = str[i];
+                }
                 break;
             
             case 1:
-                arr[index].hours = atoi(str);
+                arr[index].credits = atoi(str);
                 break;
 
             case 2: 
-                arr[index].credits = atoi(str);
+                arr[index].hours = atoi(str);
                 break;
     
             default:
@@ -74,13 +77,23 @@ struct Module* constructModules(){
 
 }
 
+
 void printModules(struct Module* arr){
     
+    int x = 0;
+
     for(int i = 0; i < arr[0].length;i++){
 
-        printf("\tModule: %s\n\tHours: %d\n\tCredits: %d\n",arr[i].name,arr[i].hours,arr[i].credits);
+        printf("%s",arr[i].name);
+        while(arr[i].name[x] != '\n'){
+            printf("%c",'-');
+            x++;
+        }
+
+        x = 0;
+
+        printf("\n\nCredits: %d\nCurrent Hours: %d\n\n",arr[i].credits,arr[i].hours);
 
     }
-    
 
 }
