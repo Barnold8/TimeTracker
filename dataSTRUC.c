@@ -116,19 +116,24 @@ void printModules(int pick){
 void displayModule(int index){
 
     system("clear"); 
+    printf("0. %s",mods[index].name);
     printUnderline(mods[index].name);
-    printf("Credits: %d\nHours: %d",mods[index].credits,mods[index].hours);
+    printf("1. Credits: %d\n2. Hours: %d",mods[index].credits,mods[index].hours);
 
 }
 
 void editModule(){
 
-    int index,attr;
+    int index,attr,c;
  
     printModules(1);    
     
     printf("\nPlease pick a module to edit: ");
     scanf("%d",&index);
+
+    printf("%d scanf output\n",index);
+
+    while((c =  getchar()) != '\n' && c != EOF){} 
 
     displayModule(index);
 
