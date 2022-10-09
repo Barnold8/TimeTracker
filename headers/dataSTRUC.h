@@ -10,7 +10,6 @@ struct Module{ // each module has hours completed by user, credits to determine 
     int id; // used to determine what menu item each module is for the menu system
 };
 
-extern struct Module* arr;
 
 struct Module* constructModules(); // returns heap allocated struct array with all the modules read from file / FREE THIS LATER
 

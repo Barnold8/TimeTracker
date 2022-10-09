@@ -4,6 +4,8 @@
 #include <string.h>
 #include "headers/fileRDR.h"
 
+struct Module* mods; // this feels unsafe for some reason
+
 struct Module* constructModules(){
 
     char *file = "data";

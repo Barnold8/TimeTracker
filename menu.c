@@ -23,6 +23,8 @@ int homeChoice(){
 }
 
 void ex(){
+    extern struct Module* mods;
+    free(mods);
     exit(0);
 }
 
