@@ -13,12 +13,16 @@ struct Module{ // each module has hours completed by user, credits to determine 
 
 struct Module* constructModules(); // returns heap allocated struct array with all the modules read from file / FREE THIS LATER
 
-void printModules ();
+void printModules (int);
 
 void editModule();
 
 void deleteModule();
 
 void addModule();
+
+void displayModule(int);
+
+void printUnderline(char*);
 
 #endif

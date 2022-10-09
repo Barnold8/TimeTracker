@@ -106,7 +106,6 @@ int makeFile(){
 
 }
 
-
 int getLines(char* file){
 
     FILE *fptr;

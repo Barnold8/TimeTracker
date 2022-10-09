@@ -7,4 +7,6 @@ void ex();
 
 void runMenOpt(int choice);
 
+void contWait();
+
 #endif

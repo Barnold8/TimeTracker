@@ -79,33 +79,59 @@ struct Module* constructModules(){
 
 }
 
-
-void printModules(){
+void printUnderline(char* title){
     
-   
     int x = 0;
+     
+    while(title[x] != '\n'){
+        printf("%c",'-');
+        x++;
+    }
+    printf("\n");
+    
+}
+
+void printModules(int pick){
+    
+    int x = 0;
+
+    system("clear");
+
+    printf("================== Modules ==================\n\n");
 
     for(int i = 0; i < mods[0].length;i++){
 
-        printf("%s",mods[i].name);
-        while(mods[i].name[x] != '\n'){
-            printf("%c",'-');
-            x++;
-        }
+        (pick == 0 ? printf("%s",mods[i].name) : printf("%d. %s",i,mods[i].name));
+
+        printUnderline(mods[i].name);
 
         x = 0;
 
-        printf("\n\nCredits: %d\nCurrent Hours: %d\n\n",mods[i].credits,mods[i].hours);
+        printf("\nCredits: %d\nCurrent Hours: %d\n\n",mods[i].credits,mods[i].hours);
 
     }
+    contWait();
 }
 
+void displayModule(int index){
+
+    system("clear"); 
+    printUnderline(mods[index].name);
+    printf("Credits: %d\nHours: %d",mods[index].credits,mods[index].hours);
+
+}
 
 void editModule(){
-        
-    printf("EditModule\n");
 
+    int index,attr;
+ 
+    printModules(1);    
     
+    printf("\nPlease pick a module to edit: ");
+    scanf("%d",&index);
+
+    displayModule(index);
+
     runMenOpt(homeChoice());
 
 }

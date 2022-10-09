@@ -30,6 +30,13 @@ void ex(){
     exit(0);
 }
 
+void contWait(){
+
+    printf("Press enter to continue\n");
+    char enter = 0;
+    while (enter != '\r' && enter != '\n') { enter = getchar(); }
+
+}
 
 void runMenOpt(int choice){ // 
 

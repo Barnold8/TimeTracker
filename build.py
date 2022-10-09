@@ -19,6 +19,11 @@ for v in args:
     if v.lower() == "-vv":
         os.system("valgrind -s --tool=memcheck --leak-check=yes --show-reachable=yes --track-origins=yes ./main")
         exit()
+
+    if v.lower() == '-n':
+        os.system("gcc {} -g -o main && ./main".format(buildStr))
+        exit()
+
     if v.lower() == "-p":
         pedantic = True
     
