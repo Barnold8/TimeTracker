@@ -9,6 +9,8 @@ int homeChoice(){
 
     char* menu_items[MAX] = {"View modules","Edit Module","Add Module","Delete Module","Write New File","Delete File","Exit"};
     int choice = 0;
+    
+    //system("clear");
 
     printf("\n");
     for(int i = 0 ; i < MAX; i ++){

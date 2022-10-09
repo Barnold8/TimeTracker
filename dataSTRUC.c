@@ -82,8 +82,7 @@ struct Module* constructModules(){
 
 void printModules(){
     
-    struct Module* mods = constructModules();
-
+   
     int x = 0;
 
     for(int i = 0; i < mods[0].length;i++){
@@ -99,7 +98,6 @@ void printModules(){
         printf("\n\nCredits: %d\nCurrent Hours: %d\n\n",mods[i].credits,mods[i].hours);
 
     }
-    free(arr);
 }
 
 
@@ -107,11 +105,17 @@ void editModule(){
         
     printf("EditModule\n");
 
+    
+    runMenOpt(homeChoice());
+
 }
 
 void deleteModule(){
 
     printf("DeleteModule\n");
+
+    
+    runMenOpt(homeChoice());
 
 }
 
@@ -119,5 +123,7 @@ void addModule(){
 
     printf("addModule\n");
 
+
+    runMenOpt(homeChoice());
 }
 
