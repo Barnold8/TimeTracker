@@ -82,21 +82,21 @@ struct Module* constructModules(){
 
 void printModules(){
     
-    struct Module* arr = constructModules();
+    struct Module* mods = constructModules();
 
     int x = 0;
 
-    for(int i = 0; i < arr[0].length;i++){
+    for(int i = 0; i < mods[0].length;i++){
 
-        printf("%s",arr[i].name);
-        while(arr[i].name[x] != '\n'){
+        printf("%s",mods[i].name);
+        while(mods[i].name[x] != '\n'){
             printf("%c",'-');
             x++;
         }
 
         x = 0;
 
-        printf("\n\nCredits: %d\nCurrent Hours: %d\n\n",arr[i].credits,arr[i].hours);
+        printf("\n\nCredits: %d\nCurrent Hours: %d\n\n",mods[i].credits,mods[i].hours);
 
     }
     free(arr);
