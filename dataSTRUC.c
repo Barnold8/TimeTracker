@@ -135,6 +135,8 @@ void editModule(){
 
     while((c =  getchar()) != '\n' && c != EOF){} 
 
+    index = (index > mods[0].length) ? mods[0].length -1 : index;
+
     displayModule(index);
 
     runMenOpt(homeChoice());
